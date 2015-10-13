@@ -67,6 +67,20 @@ app.controller('SoundBoardCtrl', function ($scope) {
 	};
 
 	$scope.play = function (sound) {
-	};
-});
 
+		if ($scope.media){
+			$scope.media.pause();
+		}
+			$scope.media = new Audio();
+			console.log($scope.media);
+			$scope.media.src = sound.file;
+			$scope.media.load();
+			$scope.media.play();
+
+
+	};
+
+
+
+
+});
